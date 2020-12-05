@@ -38,29 +38,25 @@ impl Seat {
     }
 
     fn get_row(&self) -> i32 {
-        let mut min = 0;
-        let mut max_excl = 128;
-        for c in self.id.chars() {
-            if c == 'F' {
-                max_excl -= (max_excl - min) / 2
-            } else if c == 'B' {
-                min += (max_excl - min) / 2
+        let mut result = 0;
+        for c in self.id[0..7].chars() {
+            result <<= 1;
+            if c == 'B' {
+                result += 1;
             }
         }
-        min
+        result
     }
 
     fn get_column(&self) -> i32 {
-        let mut min = 0;
-        let mut max_excl = 8;
-        for c in self.id.chars() {
-            if c == 'L' {
-                max_excl -= (max_excl - min) / 2
-            } else if c == 'R' {
-                min += (max_excl - min) / 2
+        let mut result = 0;
+        for c in self.id[7..].chars() {
+            result <<= 1;
+            if c == 'R' {
+                result += 1;
             }
         }
-        min
+        result
     }
 
     fn get_id(&self) -> i32 {
