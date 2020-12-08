@@ -9,9 +9,10 @@ mod day4;
 mod day5;
 mod day6;
 mod day7;
+mod day8;
 
 fn main() {
-    let day_to_execute = 7;
+    let day_to_execute = 8;
     let part_to_execute = 2;
     let use_sample = false;
 
@@ -32,6 +33,8 @@ fn main() {
     things_to_execute.insert((6, 2), day6::exec2);
     things_to_execute.insert((7, 1), day7::exec1);
     things_to_execute.insert((7, 2), day7::exec2);
+    things_to_execute.insert((8, 1), day8::exec1);
+    things_to_execute.insert((8, 2), day8::exec2);
 
     let thing_to_execute = things_to_execute.get(&(day_to_execute, part_to_execute));
     if thing_to_execute.is_some() {
