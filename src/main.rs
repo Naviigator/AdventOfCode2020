@@ -14,9 +14,11 @@ mod day8;
 mod day9;
 mod day10;
 mod day11;
+mod day12;
+mod day13;
 
 fn main() {
-    let day_to_execute = 11;
+    let day_to_execute = 13;
     let part_to_execute = 2;
     let use_sample = false;
 
@@ -45,6 +47,10 @@ fn main() {
     things_to_execute.insert((10, 2), day10::exec2);
     things_to_execute.insert((11, 1), day11::exec1);
     things_to_execute.insert((11, 2), day11::exec2);
+    things_to_execute.insert((12, 1), day12::exec1);
+    things_to_execute.insert((12, 2), day12::exec2);
+    things_to_execute.insert((13, 1), day13::exec1);
+    things_to_execute.insert((13, 2), day13::exec2);
 
     /*for day in 0..32 {
         for part in 0..2 {
@@ -68,6 +74,6 @@ fn main() {
         let start = Instant::now();
         thing_to_execute.unwrap()(use_sample);
         let duration = start.elapsed();
-        println!("ran in {:?} microseconds, that is {} MS", duration.as_micros(), duration.as_millis());
+        println!("ran in {} microseconds, that is {} MS", duration.as_micros(), duration.as_millis());
     }
 }
