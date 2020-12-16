@@ -18,9 +18,10 @@ mod day12;
 mod day13;
 mod day14;
 mod day15;
+mod day16;
 
 fn main() {
-    let day_to_execute = 15;
+    let day_to_execute = 16;
     let part_to_execute = 2;
     let use_sample = false;
 
@@ -57,6 +58,8 @@ fn main() {
     things_to_execute.insert((14, 2), day14::exec2);
     things_to_execute.insert((15, 1), day15::exec1);
     things_to_execute.insert((15, 2), day15::exec2);
+    things_to_execute.insert((16, 1), day16::exec1);
+    things_to_execute.insert((16, 2), day16::exec2);
 
     /*for day in 0..32 {
         for part in 0..2 {
